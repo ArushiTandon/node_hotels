@@ -21,6 +21,7 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
+        res.set('Cache-Control', 'no-store');
         const data = await Menu.find();
         console.log('Item fetched');
         res.status(200).json(data);    
