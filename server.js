@@ -6,7 +6,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 const personRoutes = require('./routes/personRoutes');
 const menuRoutes = require('./routes/menuRoutes');
