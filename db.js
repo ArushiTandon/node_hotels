@@ -1,7 +1,13 @@
-const mongoose = require('mongoose');
 require('dotenv').config();
+const mongoose = require('mongoose');
 
-const mongoURL = process.env.MONGO_URL;
+const mongoURL = process.env.MONGODB_URL;
+
+if (!mongoURL) {
+    console.error('MongoDB URI is not defined. Please set the MONGODB_URI environment variable.');
+    process.exit(1); 
+}
+
 mongoose
 .connect(mongoURL)
 .then(() => console.log("Connected to MongoDB"))
