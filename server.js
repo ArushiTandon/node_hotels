@@ -19,7 +19,7 @@ app.get('/', localAuthMid, (req, res) => {
     res.send('Welcome to the restaurant');
 });
 
-app.use('/person', localAuthMid, personRoutes);
+app.use('/person', personRoutes);
 app.use('/menu', menuRoutes);
 
 app.listen(PORT, () => {
